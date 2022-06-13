@@ -1,0 +1,154 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    border-bottom: 1px #ebd72d solid;
+}
+
+.wrapper {
+    margin-top: 10px;
+}
+
+.block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.mailLogo {
+    width: 2vw;
+    height: auto;
+    position: relative;
+    top: 0;
+    margin: .2vw;
+}
+.phoneLogo {
+    width: 20vw;
+    height: auto;
+}
+
+.logoViolet {
+    margin-top: 1vw;
+    width: 27vw;
+    height: auto;
+}
+
+.block a {
+    font-size: 2.5vw;
+    font-family: 'Bodoni italic', serif;
+    color: #ebd72d;
+    text-decoration: none;
+
+}
+
+ /*Mobile version*/
+
+.headerMobile {
+    background: #9e0047;
+    width: 100%;
+    padding: 3px 0;
+    z-index: 1;
+    border-bottom: 1px #ebd72d solid;
+}
+.wrapperMobile {
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+.blockMobile {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.blockMobile a {
+    margin: 5px 0;
+    font-size: 28px;
+    font-family: 'Bodoni italic', serif;
+    color: #ebd72d;
+    text-decoration: none;
+
+}
+
+.phoneLogoMobile {
+    width: 200px;
+    height: auto;
+    margin-top: 5px;
+}
+.logoVioletMobile {
+    margin-top: 5px;
+    width: 250px;
+    height: auto;
+    order: -1;
+}
+.mailLogoMobile {
+    width: 21px;
+    margin: 0 2px;
+    height: auto;
+    position: relative;
+    top: 0.5vw;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.colors {
+    position: fixed;
+    bottom: 0;
+}
+.color1 {
+    height: 50px;
+    width: 50px;
+    background: #9e0047;
+}
+.color2 {
+    height: 50px;
+    width: 50px;
+    background: #ebd72d;
+}
+.color3 {
+    height: 50px;
+    width: 50px;
+    background: #eb1575;
+}
+.color4 {
+    height: 50px;
+    width: 50px;
+    background: #2dceeb;
+}
+.color5 {
+    height: 50px;
+    width: 50px;
+    background: #06879e;
+}

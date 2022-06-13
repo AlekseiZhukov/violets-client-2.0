@@ -1,0 +1,30 @@
+
+/*
+@font-face {
+    font-family: 'Bodoni bold';
+    src: url('./assets/fonts/bodoniBold.ttf');
+}
+
+@font-face {
+    font-family: 'Bodoni italic';
+    src: url('./assets/fonts/bodoniItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/montserrat.ttf');
+}*/
+
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+
+
+
