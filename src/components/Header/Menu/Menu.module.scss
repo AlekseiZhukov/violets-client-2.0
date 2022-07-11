@@ -1,0 +1,43 @@
+a {
+  transition: color 0.2s linear;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 1%;
+    background: #eb1575;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: opacity, width ease-in-out 0.25s;
+  }
+  &.active,
+  &:hover {
+    transition: color 0.25s linear;
+    color: #eb1575;
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 549px) {
+  a {
+    color: #ebd72d;
+    &:after {
+      position: relative;
+      background: #2ecfee;
+    }
+    &.active,
+    &:hover {
+      color: #2ecfee;
+    }
+  }
+}

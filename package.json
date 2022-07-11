@@ -33,7 +33,11 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.2"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
+    "classnames": "^2.3.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0"
