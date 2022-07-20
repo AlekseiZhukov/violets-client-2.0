@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = ({ handleClickLink }) => {
   return (
-    <ul>
+    <ul className={s.menu}>
       {MENU.map(({ name, href }, index) => (
         <li key={index}>
           <NavLink

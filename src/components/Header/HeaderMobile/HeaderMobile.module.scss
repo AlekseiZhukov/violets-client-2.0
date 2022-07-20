@@ -1,14 +1,35 @@
 .mobileNav {
-  position: absolute;
+  position: fixed;
   left: 0;
-  width: 100vw;
   height: 40px;
   background: #9e0047;
+  .logoWrap {
+    position: relative;
+    z-index: 3;
+    top: 8px;
+    right: -76px;
+    width: 74%;
+    margin-left: 5px;
+
+    svg {
+      width: 150px;
+      height: auto;
+      path {
+        fill: #ebd72d;
+      }
+    }
+    img {
+      position: relative;
+      top: -7px;
+      right: -14px;
+    }
+  }
   .mobileNavBand {
-    position: absolute;
+    position: relative;
     left: 0;
+    top: -34px;
     width: 100vw;
-    height: 40px;
+    height: 45px;
     background: #9e0047;
     z-index: 2;
   }
@@ -40,8 +61,8 @@
 
 .menuButton {
   position: relative;
-  left: 13vw;
-  top: 9px;
+  left: 9vw;
+  top: -63px;
   height: 22px;
   width: 30px;
   outline: none;

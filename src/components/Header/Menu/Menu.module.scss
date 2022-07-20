@@ -1,3 +1,7 @@
+.menu {
+  position: relative;
+}
+
 a {
   transition: color 0.2s linear;
   text-decoration: none;
@@ -33,11 +37,11 @@ a {
     color: #ebd72d;
     &:after {
       position: relative;
-      background: #2ecfee;
+      background: white;
     }
     &.active,
     &:hover {
-      color: #2ecfee;
+      color: white;
     }
   }
 }

@@ -1,11 +1,29 @@
 .root {
+}
+.container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.container {
+.subContainer {
   display: flex;
   flex-flow: column nowrap;
+  position: relative;
+}
+.mainWrap {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white;
+  z-index: 1;
+  &.small {
+    box-shadow: 0px 1px 3px 0px rgba(50, 50, 50, 0.8);
+  }
 }
 
 .nav {
@@ -23,14 +41,19 @@
     }
   }
 }
-
+.basketWrap {
+  position: relative;
+}
+.containerLogo {
+}
 .logoRow {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 25px 0;
+  padding: 49px 0 25px;
   position: relative;
+
   img {
     width: 370px;
     height: auto;
@@ -44,8 +67,6 @@
 
 @media only screen and (max-width: 949px) {
   .root {
-    max-width: 540px;
-    margin: 0 auto;
     .nav {
       margin: 15px 0;
       li {
@@ -55,7 +76,7 @@
   }
 
   .logoRow {
-    padding: 7px 0;
+    padding: 49px 0 7px;
     img {
       width: 225px;
       height: auto;
@@ -68,8 +89,6 @@
 
 @media only screen and (max-width: 549px) {
   .root {
-    max-width: 320px;
-    margin: 0 auto;
   }
   .logoRow {
     flex-flow: column;

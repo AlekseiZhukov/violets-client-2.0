@@ -1,0 +1,66 @@
+.basketWrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.basket {
+  height: auto;
+  width: 50px;
+}
+.count {
+  position: absolute;
+  bottom: 4px;
+  right: 7px;
+  border: 1px #ebd72d solid;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: #eb1575;
+  text-align: center;
+  p {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    top: -13px;
+  }
+}
+
+@media only screen and (max-width: 949px) {
+  .basket {
+    height: auto;
+    width: 40px;
+  }
+  .count {
+    width: 15px;
+    height: 15px;
+
+    p {
+      font-size: 12px;
+      top: -12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 549px) {
+  .basket {
+    height: auto;
+    width: 30px;
+  }
+  .basketWrap {
+    position: absolute;
+    top: 10px;
+    right: 36px;
+    .count {
+      width: 10px;
+      height: 10px;
+      bottom: 11px;
+      right: -5px;
+
+      p {
+        font-size: 10px;
+        top: -12px;
+      }
+    }
+  }
+}
