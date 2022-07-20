@@ -1,0 +1,17 @@
+.root {
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.title {
+  color: #9e0047;
+  margin: 0 0 1vw;
+  text-align: center;
+}
+.cardsWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}

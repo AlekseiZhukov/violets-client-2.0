@@ -1,25 +1,29 @@
-import React from "react";
-import image1 from "../src/assets/img/phot02.jpg";
-//import imageLogo from "../src/assets/img/logoViolet.svg";
-import { ReactComponent as Logo } from "../src/assets/img/logoViolet.svg";
-import s from "./App.module.scss";
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+
+import Layout from "./components/Layout/Layout";
+import MainPage from "./pages/MainPage";
+import VioletsPage from "./pages/VioletsPage";
+import ReviewsPage from "./pages/ReviewsPage";
+import ContactsPage from "./pages/ContactsPage";
 
 const App = () => {
-  return (
-    <>
-      <div className={s.root}>
-        <h1>This is App component h1</h1>
-        <h2>This is App component h2</h2>
-        <h3>This is App component h3</h3>
+  const { pathname } = useLocation();
 
-        <div>
-          <img src={image1} alt="image1" />
-        </div>
-        <div>
-          <Logo />
-        </div>
-      </div>
-    </>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<MainPage />} />
+        <Route path="/violets" element={<VioletsPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Route>
+      <Route path="*" element={<Navigate to={"/"} replace />} />
+    </Routes>
   );
 };
 
