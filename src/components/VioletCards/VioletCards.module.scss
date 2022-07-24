@@ -9,9 +9,20 @@
   margin: 0 0 1vw;
   text-align: center;
 }
+.preloaderWrap {
+  height: 1260px;
+}
 .cardsWrapper {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: space-evenly;
+}
+.paginatorWrap {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.searchWrap {
+  width: 320px;
+  margin: 0 auto;
 }

@@ -1,19 +1,19 @@
 import React from "react";
 import s from "./Basket.module.scss";
-import basket from "../../../assets/img/basket.svg";
-import basketMobile from "../../../assets/img/basketMobile.svg";
-import fullBasket from "../../../assets/img/fullBasket.svg";
-import fullBasketMobile from "../../../assets/img/fullBasketMobile.svg";
+import basked from "../../../assets/img/basket.svg";
+import baskedMobile from "../../../assets/img/basketMobile.svg";
+import fullBasked from "../../../assets/img/fullBasket.svg";
+import fullBaskedMobile from "../../../assets/img/fullBasketMobile.svg";
 
 const Basket = ({ count, mobile }) => {
   return (
     <>
       {count ? (
-        <div className={s.basketWrap}>
+        <div className={s.baskedWrap}>
           <img
-            src={mobile ? fullBasketMobile : fullBasket}
+            src={mobile ? fullBaskedMobile : fullBasked}
             alt="full basket"
-            className={s.basket}
+            className={s.basked}
           />
           <div className={s.count}>
             <p>{count}</p>
@@ -21,9 +21,9 @@ const Basket = ({ count, mobile }) => {
         </div>
       ) : (
         <img
-          src={mobile ? basketMobile : basket}
+          src={mobile ? baskedMobile : basked}
           alt="basket"
-          className={s.basket}
+          className={s.basked}
         />
       )}
     </>

@@ -10,11 +10,15 @@ import HeaderMobile from "./HeaderMobile";
 import Basket from "./Basket";
 import s from "./Header.module.scss";
 import logoViolet from "../../assets/img/logoViolet.png";
+import { useSelector } from "react-redux";
+import { basketSelector } from "../../store/basketSlice";
 
 const Header = () => {
   const [mobile, setMobile] = useState(null);
   const [small, setSmall] = useState(false);
 
+  const borderBasket = useSelector(basketSelector);
+  const countVioletsInBasket = Object.keys(borderBasket).length;
   const handleScrollY = useCallback((e) => {
     if (window.scrollY > 49) {
       setSmall(true);
@@ -62,12 +66,15 @@ const Header = () => {
                   <Menu />
                 </div>
                 <div className={s.basketWrap}>
-                  <Basket count={9} />
+                  <Basket
+                    count={countVioletsInBasket && countVioletsInBasket}
+                  />
                 </div>
               </div>
               <div className={s.containerLogo}>
                 <div className={s.logoRow}>
                   <img src={logoViolet} alt="logo" />
+                  <p>г. Дзержинск</p>
                   <p>+7 908 235 36 47</p>
                   <p>zhukova__elena@bk.ru</p>
                 </div>

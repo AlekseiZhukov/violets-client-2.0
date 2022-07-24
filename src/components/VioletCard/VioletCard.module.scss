@@ -4,7 +4,7 @@
   height: 400px;
   position: relative;
   box-shadow: 0 1px 2px rgba(97, 0, 40, 0.4);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   overflow: hidden;
   margin: 10px;
   border-radius: 30px 0 30px 0;
@@ -13,7 +13,7 @@
     box-shadow: 0 4px 9px rgba(97, 0, 40, 0.4);
     .cardImage {
       transform: scale(1.5);
-      opacity: 0.6;
+      opacity: 1;
     }
     .cardDetails {
       top: 60%;
@@ -27,8 +27,9 @@
 .cardImage {
   max-width: 100%;
   transform: scale(1);
-  transform-origin: 0 0;
+  transform-origin: 50% 50%;
   margin-bottom: 0;
+  opacity: 0.85;
   transition: all 0.2s ease;
 }
 
@@ -102,6 +103,74 @@
     &:hover {
       svg {
         opacity: 1;
+      }
+    }
+  }
+}
+
+.buttonBaskedWrap {
+  display: flex;
+  button {
+    padding: 0 10px;
+    width: 115px;
+    height: 32px;
+    background: none;
+    border: 1px #eb1575 solid;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inherit;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+
+    svg {
+      width: 36px;
+      height: auto;
+
+      path {
+        &:nth-child(even) {
+          fill: #9e0047;
+        }
+      }
+    }
+    p {
+      font-size: 10px;
+    }
+    &:hover {
+      background: #eb1575;
+      transition: all 0.2s ease;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      p {
+        color: white;
+      }
+    }
+    &.active {
+      background: #eb1575;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 549px) {
+  .cardMeta {
+    a {
+      color: #000;
+      &:hover {
+        color: #eb1575;
       }
     }
   }

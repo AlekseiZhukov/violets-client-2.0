@@ -1,0 +1,24 @@
+.selectedPage,
+.numberPage {
+  margin: 10px 0 10px 20px;
+  cursor: pointer;
+  font-family: "Bodoni italic", serif;
+  font-size: 13px;
+  color: #eb1575;
+
+  transition: all 0.25s linear;
+}
+.selectedPage {
+  font-weight: bold;
+  font-size: 15px;
+}
+.selectedPage:hover,
+.numberPage:hover {
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.25s linear;
+}
+.string {
+  color: #eb1575;
+  font-size: 13px;
+}

@@ -1,0 +1,70 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper input {
+  margin: 0 0 10px;
+  width: 100%;
+  height: 20px;
+  background: none;
+  color: #000;
+  font-size: 13px;
+  border: #eb1575 1px solid;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.wrapper input::placeholder {
+  color: rgba(6, 135, 158, 0.92);
+  font-size: 13px;
+  font-style: italic;
+}
+.searchButton {
+  /*border: none;
+  border-radius: 50%;
+  background: rgba(92%, 8%, 46%, 0.5);
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: -2px;
+  top: 4px;
+  font-size: 0.8vw;
+  padding: 1px 0 3px;
+  color: #ebd72d;*/
+  cursor: pointer;
+}
+.searchIcon {
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  right: -5px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.wrapper button,
+.wrapper input:focus-visible,
+.wrapper input:focus,
+.wrapper input:hover {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.wrapper button {
+  border: none;
+  border-radius: 50%;
+  background: rgba(92%, 8%, 46%, 0.5);
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 25px;
+  top: 4px;
+  font-size: 0.8vw;
+  padding: 1px 0 3px;
+  color: #ebd72d;
+  cursor: pointer;
+}
+.wrapper button:hover {
+  background: rgba(92%, 8%, 46%, 1);
+}

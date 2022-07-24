@@ -1,9 +1,9 @@
-.basketWrap {
+.baskedWrap {
   position: relative;
   cursor: pointer;
 }
 
-.basket {
+.basked {
   height: auto;
   width: 50px;
 }
@@ -22,12 +22,12 @@
     font-size: 14px;
     font-weight: bold;
     color: white;
-    top: -13px;
+    top: 0;
   }
 }
 
 @media only screen and (max-width: 949px) {
-  .basket {
+  .basked {
     height: auto;
     width: 40px;
   }
@@ -37,29 +37,29 @@
 
     p {
       font-size: 12px;
-      top: -12px;
+      top: 0;
     }
   }
 }
 
 @media only screen and (max-width: 549px) {
-  .basket {
+  .basked {
     height: auto;
-    width: 30px;
+    width: 40px;
   }
-  .basketWrap {
+  .baskedWrap {
     position: absolute;
     top: 10px;
     right: 36px;
     .count {
-      width: 10px;
-      height: 10px;
-      bottom: 11px;
-      right: -5px;
+      width: 14px;
+      height: 14px;
+      bottom: 15px;
+      right: -9px;
 
       p {
-        font-size: 10px;
-        top: -12px;
+        font-size: 11px;
+        top: 0;
       }
     }
   }
