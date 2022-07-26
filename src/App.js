@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage";
 import VioletsPage from "./pages/VioletsPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import ContactsPage from "./pages/ContactsPage";
+import Order from "./components/Order";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/violets" element={<VioletsPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/order" element={<Order />} />
       </Route>
       <Route path="*" element={<Navigate to={"/"} replace />} />
     </Routes>

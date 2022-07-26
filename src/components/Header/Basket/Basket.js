@@ -4,12 +4,17 @@ import basked from "../../../assets/img/basket.svg";
 import baskedMobile from "../../../assets/img/basketMobile.svg";
 import fullBasked from "../../../assets/img/fullBasket.svg";
 import fullBaskedMobile from "../../../assets/img/fullBasketMobile.svg";
+import { useNavigate } from "react-router-dom";
 
 const Basket = ({ count, mobile }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/order");
+  };
   return (
     <>
       {count ? (
-        <div className={s.baskedWrap}>
+        <div className={s.baskedWrap} onClick={handleClick}>
           <img
             src={mobile ? fullBaskedMobile : fullBasked}
             alt="full basket"

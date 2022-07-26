@@ -1,16 +1,9 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./VioletCards.module.scss";
-
-import {
-  fetchViolets,
-  like,
-  violetsCardTitleSlugSelector,
-  violetsDataSelector,
-  violetsErrorSlugSelector,
-  violetsIsLoadingSelector,
-} from "../../store/violetsSlice";
+import { like, violetsCardTitleSlugSelector } from "../../store/violetsSlice";
 import { violetToBasket, basketSelector } from "../../store/basketSlice";
+import { useFetchAllVioletsQuery } from "../../api/violetsAPI";
 import Preloader from "../Preloader";
 import VioletCard from "../VioletCard";
 import Paginator from "../Paginator/Paginator";
@@ -20,15 +13,14 @@ const VioletCards = () => {
   const [searchValue, setSearchValue] = useState("");
   const [page, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
-
+  const { data, error, isLoading } = useFetchAllVioletsQuery({
+    page,
+    searchValue,
+  });
   const violetsCardsInBasket = useSelector(basketSelector);
-  const violetsLoadingData = useSelector(violetsIsLoadingSelector);
-  const violetsData = useSelector(violetsDataSelector);
   const violetsLikeCard = useSelector(violetsCardTitleSlugSelector);
-  const violetsError = useSelector(violetsErrorSlugSelector);
-
-  const currentPage = violetsData && violetsData.current;
-  const pages = violetsData && violetsData.pages;
+  const currentPage = data && data.current;
+  const pages = data && data.pages;
 
   const handleLikeClickRedux = (titleSlug) => {
     dispatch(like(titleSlug));
@@ -43,10 +35,6 @@ const VioletCards = () => {
   const handleSearch = (value) => {
     setSearchValue(value);
   };
-
-  useEffect(() => {
-    dispatch(fetchViolets({ page: page, searchValue: searchValue }));
-  }, [page, searchValue]);
 
   useEffect(() => {
     localStorage.setItem("likedViolet", JSON.stringify(violetsLikeCard));
@@ -66,16 +54,16 @@ const VioletCards = () => {
         <div className={s.searchWrap}>
           <SearchForm onSearchValueChanged={handleSearch} />
         </div>
-        {violetsLoadingData && (
+        {isLoading && (
           <div className={s.preloaderWrap}>
             <Preloader />
           </div>
         )}
         <div className={s.cardsWrapper}>
-          {violetsData !== null &&
-            !violetsError &&
-            !violetsLoadingData &&
-            violetsData.violetsCards.map(
+          {data &&
+            !error &&
+            !isLoading &&
+            data.violetsCards.map(
               ({ titleSlug, nameViolet, photo, description }) => (
                 <div key={titleSlug}>
                   <VioletCard
@@ -91,10 +79,10 @@ const VioletCards = () => {
                 </div>
               )
             )}
-          {violetsError && <p>такой фиалки не найдено</p>}
+          {error && <p>нет совпадений</p>}
         </div>
         <div className={s.paginatorWrap}>
-          {violetsData !== null && !violetsError && (
+          {data !== null && !error && (
             <Paginator
               currentPage={currentPage}
               onPageChanged={handlerPageChanged}

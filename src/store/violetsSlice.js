@@ -5,12 +5,12 @@ const likedVioletsStorage =
 
 const initialState = {
   likedCards: likedVioletsStorage || {},
-  isLoading: false,
+  /*isLoading: false,
   data: null,
-  error: "",
+  error: "",*/
 };
 
-export const fetchViolets = createAsyncThunk(
+/*export const fetchViolets = createAsyncThunk(
   "violets/fetchAll",
   async ({ page, searchValue }, thunkApi) => {
     try {
@@ -36,20 +36,17 @@ export const fetchViolets = createAsyncThunk(
       return thunkApi.rejectWithValue(e.message || "ответ не ok");
     }
   }
-);
+);*/
 
 const violetsSlice = createSlice({
   name: "violets",
   initialState,
   reducers: {
-    likedViolets: (state, action) => {
-      state.likedCards = action.payload;
-    },
     like: (state, action) => {
       state.likedCards[action.payload] = !state.likedCards[action.payload];
     },
   },
-  extraReducers: {
+  /*extraReducers: {
     [fetchViolets.pending.type]: (state) => {
       state.isLoading = true;
     },
@@ -62,13 +59,10 @@ const violetsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-  },
+  },*/
 });
 
-export const { like, likedViolets } = violetsSlice.actions;
-export const violetsIsLoadingSelector = (state) => state.violets.isLoading;
-export const violetsDataSelector = (state) => state.violets.data;
+export const { like } = violetsSlice.actions;
 export const violetsCardTitleSlugSelector = (state) => state.violets.likedCards;
-export const violetsErrorSlugSelector = (state) => state.violets.error;
 
 export default violetsSlice.reducer;

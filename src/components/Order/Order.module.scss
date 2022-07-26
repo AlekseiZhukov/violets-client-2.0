@@ -1,0 +1,28 @@
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+  h1 {
+    color: #9e0047;
+    margin: 0 0 1vw;
+    text-align: center;
+  }
+}
+.wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.tableOrder {
+  display: flex;
+  flex-flow: column;
+  min-width: 873px;
+  height: 50px;
+  background: #ebd72d;
+}
+
+.tableTotalOrder {
+  min-width: 277px;
+  height: 50px;
+  background: #eb2da5;
+  align-self: stretch;
+}
