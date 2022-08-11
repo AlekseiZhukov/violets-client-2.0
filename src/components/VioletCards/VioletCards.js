@@ -64,7 +64,7 @@ const VioletCards = () => {
             !error &&
             !isLoading &&
             data.violetsCards.map(
-              ({ titleSlug, nameViolet, photo, description }) => (
+              ({ titleSlug, nameViolet, photo, description, ...res }) => (
                 <div key={titleSlug}>
                   <VioletCard
                     name={nameViolet}
@@ -72,9 +72,13 @@ const VioletCards = () => {
                     src={photo}
                     description={description}
                     isLike={violetsLikeCard[titleSlug]}
-                    inBasket={violetsCardsInBasket[titleSlug]}
+                    inBasket={
+                      violetsCardsInBasket &&
+                      violetsCardsInBasket.find((item) => item === titleSlug)
+                    }
                     onLikeClick={handleLikeClickRedux}
                     onBasketClick={handleBasketClickRedux}
+                    props={...res}
                   />
                 </div>
               )

@@ -25,11 +25,13 @@ const Basket = ({ count, mobile }) => {
           </div>
         </div>
       ) : (
-        <img
-          src={mobile ? baskedMobile : basked}
-          alt="basket"
-          className={s.basked}
-        />
+        <div className={s.baskedWrapEmpty}>
+          <img
+            src={mobile ? baskedMobile : basked}
+            alt="basket"
+            className={s.basked}
+          />
+        </div>
       )}
     </>
   );

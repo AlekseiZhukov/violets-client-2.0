@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
-
-import s from "./VioletCard.module.scss";
-
 import { ReactComponent as Like } from "./assets/heart.svg";
 import { ReactComponent as Basket } from "../../assets/img/basket.svg";
-import { useDispatch } from "react-redux";
-import { violetToBasket, violetWithOutBasket } from "../../store/basketSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  violetToBasket,
+  violetToTotalCost,
+  violetWithOutBasket,
+} from "../../store/basketSlice";
+import s from "./VioletCard.module.scss";
+
+import { isTouchSelector } from "../../store/appInitSlice";
 
 const VioletCard = ({
   name,
@@ -17,8 +21,11 @@ const VioletCard = ({
   isLike,
   inBasket,
   onLikeClick,
+  props,
 }) => {
+  const touchSelector = useSelector(isTouchSelector);
   const dispatch = useDispatch();
+  const { pricesAdultViolet, pricesBaby, pricesLeaf, pricesStarter } = props;
 
   const handleClick = () => {
     onLikeClick && onLikeClick(titleSlug);
@@ -28,15 +35,38 @@ const VioletCard = ({
   };
   const handleDeleteVioletInBasket = () => {
     dispatch(violetWithOutBasket(titleSlug));
+    dispatch(violetToTotalCost({ [titleSlug]: 0 }));
   };
 
   return (
-    <div className={s.root}>
+    <div
+      className={cn(s.root, {
+        [s.touch]: touchSelector.isTouch,
+        [s.noTouch]: !touchSelector.isTouch,
+      })}
+    >
       <img src={src} alt={name} className={s.cardImage} />
       <div className={s.cardDetails}>
         <h2 className={s.cardName}>{name}</h2>
-
         <p className={s.cardDescription}>{description}</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>листочек</th>
+              <th>детка</th>
+              <th>стартер</th>
+              <th>взрослый цветок</th>
+            </tr>
+            <tr>
+              <td>{pricesLeaf} &#x20bd;</td>
+              <td>{pricesBaby} &#x20bd;</td>
+              <td>{pricesStarter} &#x20bd;</td>
+              <td>{pricesAdultViolet} &#x20bd;</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div className={s.cardMeta}>
           <div
             onClick={handleClick}

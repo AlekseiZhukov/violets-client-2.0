@@ -2,6 +2,10 @@
   position: relative;
   cursor: pointer;
 }
+.baskedWrapEmpty {
+  position: relative;
+  cursor: unset;
+}
 
 .basked {
   height: auto;
@@ -47,7 +51,8 @@
     height: auto;
     width: 40px;
   }
-  .baskedWrap {
+  .baskedWrap,
+  .baskedWrapEmpty {
     position: absolute;
     top: 10px;
     right: 36px;

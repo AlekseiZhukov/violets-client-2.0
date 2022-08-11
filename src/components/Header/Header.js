@@ -18,7 +18,7 @@ const Header = () => {
   const [small, setSmall] = useState(false);
 
   const borderBasket = useSelector(basketSelector);
-  const countVioletsInBasket = Object.keys(borderBasket).length;
+  const countVioletsInBasket = borderBasket && borderBasket.length;
   const handleScrollY = useCallback((e) => {
     if (window.scrollY > 49) {
       setSmall(true);

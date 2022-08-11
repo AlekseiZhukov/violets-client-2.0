@@ -2,9 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   h1 {
-    color: #9e0047;
-    margin: 0 0 1vw;
-    text-align: center;
+    margin: 0 2vw 1vw;
   }
 }
 .wrap {
@@ -15,14 +13,67 @@
 .tableOrder {
   display: flex;
   flex-flow: column;
-  min-width: 873px;
-  height: 50px;
-  background: #ebd72d;
+  width: 70%;
+
+  border: 1px solid #06879e;
+  box-shadow: 0px 4px 15px rgb(34 42 70 / 8%);
+  border-radius: 10px;
+  h2 {
+    margin: 10px;
+  }
+}
+.tableOrderHeader {
 }
 
 .tableTotalOrder {
-  min-width: 277px;
-  height: 50px;
-  background: #eb2da5;
-  align-self: stretch;
+  width: 267px;
+  align-self: start;
+  padding: 10px;
+  border: 1px solid #f2f6f7;
+  /* Drop Shadow */
+  box-shadow: 0px 4px 15px rgba(34, 42, 70, 0.08);
+  border-radius: 10px;
+  h3 {
+    margin: 10px;
+  }
+  button {
+    width: 100%;
+    height: 40px;
+    border: 2px #06879e solid;
+    border-radius: 10px;
+    background: none;
+    color: #06879e;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: All 0.2s ease;
+    &:hover {
+      color: white;
+      background: #06879e;
+      transition: All 0.2s ease;
+    }
+  }
+  p {
+    margin: 10px 0;
+    word-wrap: break-word;
+  }
+}
+@media only screen and (max-width: 949px) {
+  .root {
+    h1 {
+      margin: 0 5vw 1vw;
+    }
+  }
+  .tableOrder {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .tableTotalOrder {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 549px) {
+  .root {
+    padding-top: 45px;
+  }
 }

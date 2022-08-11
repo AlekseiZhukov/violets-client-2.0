@@ -17,6 +17,11 @@ export const violetsAPI = createApi({
       }),
       providesTags: (result) => ["Violets"],
     }),
+    fetchViolet: build.query({
+      query: (titleSlug) => ({
+        url: `/homePage/violet/${titleSlug}`,
+      }),
+    }),
     /* createCharacter: build.mutation({
       query: (body) => ({
         url: "/characters",
@@ -44,4 +49,4 @@ export const violetsAPI = createApi({
   }),
 });
 
-export const { useFetchAllVioletsQuery } = violetsAPI;
+export const { useFetchAllVioletsQuery, useFetchVioletQuery } = violetsAPI;

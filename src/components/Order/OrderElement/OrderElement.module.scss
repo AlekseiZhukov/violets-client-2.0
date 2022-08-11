@@ -1,4 +1,95 @@
 .root {
   display: grid;
-  grid-template-columns: 3fr 5fr 2fr 2fr 1fr;
+  grid-template-columns: 2fr 7fr 1fr;
+  align-items: center;
+  justify-items: center;
+  border-top: 1px solid#06879e;
+  padding: 10px 0;
+}
+.firstCell {
+  text-align: center;
+  padding-left: 10px;
+  h3 {
+    color: #06879e;
+    margin: 0 0 5px;
+  }
+}
+.secondCell {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  .outOfStock {
+    align-self: center;
+    color: #eb1575;
+  }
+}
+.thirdCell {
+  button {
+    color: #e2e4eb;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: 1px #e2e4eb solid;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      border: 2px #eb1575 solid;
+      color: #eb1575;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+  }
+}
+.wrapperTypes {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+}
+.imgWrap {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 130px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 949px) {
+  .firstCell {
+  }
+}
+
+@media only screen and (max-width: 549px) {
+  .root {
+    display: grid;
+    grid-template-columns: none;
+    //grid-template-rows: 1fr 1fr;
+    grid-template-areas: "a a a c c" "a a a c c" "b b b b b";
+
+    .firstCell {
+      grid-area: a;
+    }
+    .secondCell {
+      grid-area: b;
+    }
+    .thirdCell {
+      grid-area: c;
+    }
+  }
+  .imgWrap {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
 }

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-
 import Layout from "./components/Layout/Layout";
 import MainPage from "./pages/MainPage";
 import VioletsPage from "./pages/VioletsPage";

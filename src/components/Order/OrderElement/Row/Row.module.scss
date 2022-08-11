@@ -1,0 +1,38 @@
+.root {
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-top: 10px;
+}
+.wrapChangeQuantityZone {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+
+  width: 60%;
+  height: 30px;
+  border: 1px #eb1575 solid;
+  border-radius: 5px;
+  &.notNull {
+    border: 1px rgb(125, 129, 142) solid;
+  }
+  button {
+    padding: 5px 0 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 549px) {
+  .root {
+    grid-template-columns: 2fr 2fr 1fr;
+    justify-items: start;
+    padding: 0 10px;
+  }
+  .wrapChangeQuantityZone {
+    width: 70%;
+  }
+}
