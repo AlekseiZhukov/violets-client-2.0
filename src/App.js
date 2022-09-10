@@ -6,6 +6,8 @@ import VioletsPage from "./pages/VioletsPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import ContactsPage from "./pages/ContactsPage";
 import Order from "./components/Order";
+import AuthPage from "./pages/AuthPage";
+import AdminPage from "./pages/AdminPage";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/order" element={<Order />} />
       </Route>
+      <Route path="/login" element={<AuthPage />} />
+      <Route path="/admin" element={<AdminPage />} />
       <Route path="*" element={<Navigate to={"/"} replace />} />
     </Routes>
   );

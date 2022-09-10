@@ -6,6 +6,7 @@ import Header from "../Header";
 import s from "./Layout.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { isTouchSelector, touch } from "../../store/appInitSlice";
+import Footer from "../Footer";
 
 const Layout = () => {
   const match = useMatch("/admin");
@@ -45,6 +46,7 @@ const Layout = () => {
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };

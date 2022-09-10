@@ -1,0 +1,40 @@
+.root {
+  max-width: 300px;
+
+  margin: 0 auto;
+  form {
+    margin-top: 48vh;
+    height: 120px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+  }
+}
+.inputModule {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  input {
+    height: 20px;
+    &.error {
+      border: 1px #eb1575 solid;
+    }
+  }
+  span {
+    position: absolute;
+    top: -10px;
+    right: 7px;
+    color: #eb1575;
+    font-size: 12px;
+  }
+}
+.error {
+}
+.messageToUser {
+}

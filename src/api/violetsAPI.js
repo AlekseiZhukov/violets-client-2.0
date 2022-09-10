@@ -7,6 +7,11 @@ export const violetsAPI = createApi({
   tagTypes: ["Violets"],
   baseQuery: fetchBaseQuery({ baseUrl: urlLocalServer }),
   endpoints: (build) => ({
+    fetchVioletsForSlider: build.query({
+      query: () => ({
+        url: "/slider",
+      }),
+    }),
     fetchAllViolets: build.query({
       query: ({ page, searchValue }) => ({
         url: "/homePage",
@@ -49,4 +54,8 @@ export const violetsAPI = createApi({
   }),
 });
 
-export const { useFetchAllVioletsQuery, useFetchVioletQuery } = violetsAPI;
+export const {
+  useFetchAllVioletsQuery,
+  useFetchVioletQuery,
+  useFetchVioletsForSliderQuery,
+} = violetsAPI;

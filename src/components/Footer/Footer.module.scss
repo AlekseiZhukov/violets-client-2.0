@@ -1,0 +1,55 @@
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  background: #9e0047;
+  a {
+    transition: all 0.3s linear;
+    &:hover {
+      svg {
+        path {
+          fill: white;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+}
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 50vw;
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+.wrapTelSprite {
+  a {
+    svg {
+      height: auto;
+      width: 190px;
+    }
+  }
+}
+.img {
+  width: 2.5vw;
+  height: auto;
+}
+
+@media only screen and (max-width: 549px) {
+  .block {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .root {
+    width: 320px;
+    margin: 0 auto;
+  }
+}

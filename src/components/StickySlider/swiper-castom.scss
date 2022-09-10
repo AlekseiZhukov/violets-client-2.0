@@ -1,0 +1,23 @@
+.swiper {
+  height: 100%;
+  padding-bottom: 3vw;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  position: absolute;
+  padding: 3vw 0 5vw;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ebd72d;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 5vw;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ebd72d;
+}
+

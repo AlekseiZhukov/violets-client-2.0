@@ -5,10 +5,11 @@ const useLocalStorage = (key, action = "get", data) => {
   if (action === "get") {
     const somData = JSON.parse(localStorage.getItem(key));
     setGetData(somData);
+  } else {
+    localStorage.setItem(key, JSON.stringify(data));
   }
-  localStorage.setItem(key, JSON.stringify(data));
 
-  return [getData];
+  return getData || "ok";
 };
 
 export default useLocalStorage();

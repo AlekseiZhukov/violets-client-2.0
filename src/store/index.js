@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import violetsSlice from "./violetsSlice";
 import basketSlice from "./basketSlice";
 import appInitSlice from "./appInitSlice";
+import authSlice from "./authSlice";
 import { violetsAPI } from "../api/violetsAPI";
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     violets: violetsSlice,
     appInit: appInitSlice,
     basket: basketSlice,
+    auth: authSlice,
 
     [violetsAPI.reducerPath]: violetsAPI.reducer,
   },
