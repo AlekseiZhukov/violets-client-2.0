@@ -1,0 +1,13 @@
+.index {
+  font-size: 2vw;
+  padding: 1vw;
+}
+
+.violetItem {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: #9e0047 1px solid;
+}

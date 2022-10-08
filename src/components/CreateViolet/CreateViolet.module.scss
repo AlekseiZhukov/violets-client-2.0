@@ -1,0 +1,113 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #e2e4eb;
+  .wrap {
+    max-width: 70vw;
+    margin: 2vw auto 0;
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      .inputModule {
+        position: relative;
+
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        label {
+          width: 30%;
+          text-align: right;
+        }
+        input {
+          height: 35px;
+          width: 70%;
+          margin: 10px;
+          &.error {
+            border: 1px #eb1575 solid;
+          }
+        }
+        textarea {
+          width: 70%;
+          height: 100px;
+          overflow: scroll;
+          align-self: flex-start;
+          margin: 10px;
+          &.error {
+            border: 1px #eb1575 solid;
+          }
+        }
+        span {
+          position: absolute;
+          top: -7px;
+          right: 7px;
+          color: #eb1575;
+          font-size: 12px;
+        }
+      }
+      .wrapCheckbox {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        div {
+          display: flex;
+          align-items: center;
+          width: 34%;
+          label {
+            margin-right: 10px;
+          }
+          input {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .wrapNumberInput {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin: 10px 0;
+        div {
+          position: relative;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-end;
+          width: 85%;
+          input {
+            height: 20px;
+            width: 12%;
+            margin: 10px;
+            &.error {
+              border: 1px #eb1575 solid;
+            }
+          }
+          span {
+            position: absolute;
+            top: -10px;
+            right: 7px;
+            color: #eb1575;
+            font-size: 12px;
+          }
+        }
+      }
+      .wrapperButtonBox {
+        margin-top: 10px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 44vw;
+      }
+    }
+  }
+}

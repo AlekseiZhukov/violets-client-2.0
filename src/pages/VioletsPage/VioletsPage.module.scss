@@ -1,0 +1,16 @@
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.customOverlay {
+  padding: 5px;
+
+  background: rgba(158, 0, 71, 0.4);
+
+  h3 {
+    font-size: 18px;
+    height: 100%;
+    color: #ebd72d;
+    text-align: center;
+  }
+}

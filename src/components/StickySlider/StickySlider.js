@@ -13,13 +13,16 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import css from "./StickySlider.module.scss";
 import "./swiper-castom.scss";
+import Preloader from "../Preloader";
 
 SwiperCore.use([Navigation, Pagination, A11y, EffectCoverflow, Autoplay, Zoom]);
 
 const StickySlider = () => {
   const { data, error, isLoading } = useFetchVioletsForSliderQuery();
-  console.log("StickySlider data: ", data);
 
+  if (isLoading) {
+    return <Preloader />;
+  }
   return (
     <div className={css.wrapperSection}>
       <Swiper

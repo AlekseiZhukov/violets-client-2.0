@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const likedVioletsStorage =
+  localStorage.getItem("likedViolet") &&
   Object.keys(localStorage.getItem("likedViolet")).length > 0 &&
   JSON.parse(localStorage.getItem("likedViolet"));
 

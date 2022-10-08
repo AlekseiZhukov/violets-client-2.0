@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   basketSelector,
+  clearBasket,
   dataForTotalCostSelector,
   violetWithOutBasket,
 } from "../../store/basketSlice";
@@ -28,6 +29,8 @@ const Order = () => {
   }, [costsViolets]);
   useEffect(() => {
     if (orderViolets.length === 0) {
+      localStorage.setItem("violetsInBasket", JSON.stringify([]));
+      clearBasket();
       navigate("/");
     }
   }, [orderViolets]);

@@ -116,6 +116,36 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .wrapButtonVisible {
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      svg {
+        width: 30px;
+        height: 30px;
+        path {
+          transition: all 0.3s linear;
+          fill: #06879e;
+        }
+        &:hover {
+          path {
+            transition: all 0.3s linear;
+            fill: #9e0047;
+          }
+        }
+      }
+    }
+  }
+  .showModal {
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s linear;
+    &:hover {
+      transition: all 0.3s linear;
+      color: #9e0047;
+    }
+  }
 }
 
 .like {

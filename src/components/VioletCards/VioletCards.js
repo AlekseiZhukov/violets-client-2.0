@@ -8,8 +8,10 @@ import Preloader from "../Preloader";
 import VioletCard from "../VioletCard";
 import Paginator from "../Paginator/Paginator";
 import SearchForm from "../SearchForm";
+import ModalWindowDetails from "../ModalWindowDetails_notUsed";
 
 const VioletCards = () => {
+
   const [searchValue, setSearchValue] = useState("");
   const [page, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
@@ -21,6 +23,8 @@ const VioletCards = () => {
   const violetsLikeCard = useSelector(violetsCardTitleSlugSelector);
   const currentPage = data && data.current;
   const pages = data && data.pages;
+
+
 
   const handleLikeClickRedux = (titleSlug) => {
     dispatch(like(titleSlug));
@@ -49,6 +53,7 @@ const VioletCards = () => {
 
   return (
     <div className={s.root}>
+
       <div className={s.container}>
         <h1 className={s.title}>Доступно к продаже:</h1>
         <div className={s.searchWrap}>
@@ -78,6 +83,7 @@ const VioletCards = () => {
                     }
                     onLikeClick={handleLikeClickRedux}
                     onBasketClick={handleBasketClickRedux}
+
                     props={...res}
                   />
                 </div>

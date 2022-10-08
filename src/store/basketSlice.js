@@ -23,6 +23,15 @@ const basketSlice = createSlice({
         (item) => item !== action.payload
       );
       state.violetsInBasket = newVioletsInBasket;
+      const newFinishOrder = state.finishOrder;
+      delete newFinishOrder[action.payload];
+      state.finishOrder = newFinishOrder;
+      const newDataForTotalCost = state.dataForTotalCost;
+      newDataForTotalCost.splice(
+        state.dataForTotalCost.findIndex((item) => item[action.payload]),
+        1
+      );
+      state.dataForTotalCost = newDataForTotalCost;
     },
     violetToTotalCost: (state, action) => {
       if (state.dataForTotalCost.length === 0) {

@@ -8,6 +8,8 @@ import ContactsPage from "./pages/ContactsPage";
 import Order from "./components/Order";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
+import VioletPage from "./pages/VioletPage_notUsed";
+import LayoutViolets from "./components/LayoutViolets/LayoutViolets";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -15,19 +17,19 @@ const App = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
+  console.log("App");
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<MainPage />} />
-        <Route path="/violets" element={<VioletsPage />} />
-        <Route path="/reviews" element={<ReviewsPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="violets" element={<VioletsPage />} />
+        <Route path="reviews" element={<ReviewsPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="order" element={<Order />} />
+        <Route path="*" element={<Navigate to={"/"} replace />} />
       </Route>
-      <Route path="/login" element={<AuthPage />} />
-      <Route path="/admin" element={<AdminPage />} />
-      <Route path="*" element={<Navigate to={"/"} replace />} />
+      <Route path="login" exact element={<AuthPage />} />
+      <Route path="admin" exact element={<AdminPage />} />
     </Routes>
   );
 };

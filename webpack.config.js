@@ -8,6 +8,7 @@ const NODE_ENV = process.env.NODE_ENV;
 module.exports = {
   mode: NODE_ENV ? NODE_ENV : "development",
   entry: path.resolve(__dirname, "src/index.js"),
+
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "build.js",
@@ -107,6 +108,7 @@ module.exports = {
     open: true,
     hot: true,
     historyApiFallback: true,
+
     proxy: {
       "/api": {
         target: "http://127.0.0.1:5000",
@@ -114,4 +116,7 @@ module.exports = {
     },
   },
   devtool: "source-map",
+  resolve: {
+    fallback: {},
+  },
 };

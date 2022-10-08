@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import useDebounce from "../hooks/useDebounce";
+import useDebounce from "../../hooks/useDebounce";
 import css from "./SearchForm.module.scss";
 import { ReactComponent as Search } from "../../assets/img/search.svg";
 
