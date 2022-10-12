@@ -13,7 +13,7 @@ import {
 
 const AuthPage = () => {
   const error = useSelector(authErrorSelector);
-  const isAuth = useSelector(authStatusSelector);
+  //const isAuth = useSelector(authStatusSelector);
   const data = useSelector(authDataSelector);
   const {
     register,
@@ -21,7 +21,7 @@ const AuthPage = () => {
 
     formState: { errors },
   } = useForm();
-
+  console.log("AuthPage");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -29,9 +29,10 @@ const AuthPage = () => {
     dispatch(fetchAuth(data));
   };
   useEffect(() => {
-    //console.log("useEffect AuthPage ", isAuth, data.token);
+    console.log("useEffect AuthPage ");
     if (data && data.token) {
       sessionStorage.setItem("adminData", JSON.stringify(data));
+      console.log("useEffect sessionStorage AuthPage data");
       navigate("/admin");
     }
   }, [data]);

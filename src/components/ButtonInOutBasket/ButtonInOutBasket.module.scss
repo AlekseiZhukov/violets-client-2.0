@@ -1,0 +1,57 @@
+.buttonBaskedWrap {
+  display: flex;
+  button {
+    padding: 0 10px;
+    width: 115px;
+    height: 32px;
+    background: none;
+    border: 1px #eb1575 solid;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inherit;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+
+    svg {
+      width: 36px;
+      height: auto;
+
+      path {
+        &:nth-child(even) {
+          fill: #9e0047;
+        }
+      }
+    }
+    p {
+      font-size: 10px;
+    }
+    &:hover {
+      background: #eb1575;
+      transition: all 0.2s ease;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      p {
+        color: white;
+      }
+    }
+    &.active {
+      background: #eb1575;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -12,6 +12,7 @@ import ListViolets from "../../components/ListViolets";
 import CreateViolet from "../../components/CreateViolet";
 
 const AdminPage = () => {
+  console.log("AdminPage");
   const [createVioletMode, setCreateVioletMode] = useState(false);
 
   const dispatch = useDispatch();
@@ -26,7 +27,9 @@ const AdminPage = () => {
   };
 
   useEffect(() => {
+    console.log("AdminPage useEffect");
     if (!isAuth) {
+      console.log("AdminPage useEffect !isAuth");
       navigate("/login");
     }
   }, [isAuth]);

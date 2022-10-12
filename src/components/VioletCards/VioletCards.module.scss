@@ -4,11 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.title {
-  color: #9e0047;
-  margin: 0 0 1vw;
-  text-align: center;
-}
+
 .preloaderWrap {
   height: 1260px;
 }
@@ -25,4 +21,10 @@
 .searchWrap {
   width: 320px;
   margin: 0 auto;
+}
+.errorSearch {
+  color: #9e0047;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
 }

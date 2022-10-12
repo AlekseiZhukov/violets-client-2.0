@@ -1,21 +1,14 @@
 import React from "react";
 import { useFetchVioletsForSliderQuery } from "../../api/violetsAPI";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Zoom,
-  Navigation,
-  Pagination,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-} from "swiper";
+import SwiperCore, { Pagination, EffectCoverflow, Autoplay } from "swiper";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import css from "./StickySlider.module.scss";
 import "./swiper-castom.scss";
 import Preloader from "../Preloader";
 
-SwiperCore.use([Navigation, Pagination, A11y, EffectCoverflow, Autoplay, Zoom]);
+SwiperCore.use([Pagination, EffectCoverflow, Autoplay]);
 
 const StickySlider = () => {
   const { data, error, isLoading } = useFetchVioletsForSliderQuery();
@@ -44,15 +37,13 @@ const StickySlider = () => {
         initialSlide={2}
         loop
         pagination={{ clickable: true }}
-        /*onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}*/
       >
         {data &&
           data.map((item) => (
             <SwiperSlide key={item._id}>
               <div
                 style={{
-                  backgroundImage: `url('/images/le-samocvety.jpeg`,
+                  backgroundImage: `url('${item.photo})`,
                   backgroundPosition: "50% 50%",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",

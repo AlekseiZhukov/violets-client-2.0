@@ -13,7 +13,6 @@ SwiperCore.use([Navigation, Autoplay, EffectFade]);
 
 const StickySliderMobile = () => {
   const { data, error, isLoading } = useFetchVioletsForSliderQuery();
-  console.log("StickySlider data: ", data);
 
   return (
     <div className={css.wrapperSection}>
@@ -35,7 +34,7 @@ const StickySliderMobile = () => {
             <SwiperSlide key={item._id}>
               <div
                 style={{
-                  backgroundImage: `url('/images/le-samocvety.jpeg')`,
+                  backgroundImage: `url('${item.photo})`,
                   backgroundPosition: "50% 50%",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",

@@ -65,6 +65,11 @@ const Header = () => {
                 <div className={s.nav}>
                   <Menu />
                 </div>
+                {small && (
+                  <div className={s.smallLogoWrap}>
+                    <img src={logoViolet} alt="logo" />
+                  </div>
+                )}
                 <div className={s.basketWrap}>
                   <Basket
                     count={countVioletsInBasket && countVioletsInBasket}

@@ -4,12 +4,13 @@ import React, {
   useLayoutEffect,
   useState,
 } from "react";
-import s from "./MinePage.module.scss";
 import VioletCards from "../../components/VioletCards";
-import { useDispatch, useSelector } from "react-redux";
 import BenefitsViolets from "../../components/BenefitsViolets";
 import StickySlider from "../../components/StickySlider";
 import StickySliderMobile from "../../components/StickySliderMobile";
+import { ReactComponent as Before } from "../../assets/img/before.svg";
+import s from "./MinePage.module.scss";
+import FeedbackForm from "../../components/FeedbackForm";
 
 const MinePage = () => {
   const [mobile, setMobile] = useState(null);
@@ -35,17 +36,29 @@ const MinePage = () => {
   return (
     <div className={s.root}>
       {mobile ? <StickySliderMobile /> : <StickySlider />}
-      <h3>
-        Чтобы в этот мир добавить
-        <br /> Хоть немного красоты -<br /> У меня цветут фиалки,
-        <br /> Это - лучшие цветы!
-      </h3>
-      <BenefitsViolets />
-      <VioletCards />
+      <a href="#violets">Приступить к пакупке</a>
+      <div className={s.versesBlock}>
+        <div className={s.wrapSvg}>
+          <Before />
+        </div>
 
-      <h1>Отзывы</h1>
-      <h1>Форма обратной связи</h1>
-      <h1>Контакты</h1>
+        <p className={s.wrapPoetry}>
+          Чтоб в мир добавить красоты,
+          <br />
+          У меня цветут фиалки,
+          <br /> Это - лучшие цветы !
+        </p>
+      </div>
+      <section className={s.sectionViolets}>
+        <a name="violets">
+          <h1>Доступно к продаже:</h1>
+        </a>
+        <VioletCards />
+      </section>
+
+      <BenefitsViolets />
+
+      <FeedbackForm />
     </div>
   );
 };

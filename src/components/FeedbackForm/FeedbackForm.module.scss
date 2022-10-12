@@ -1,0 +1,200 @@
+.feedbackFormWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 2vw 0;
+  margin: 45px 0 80px;
+  h2 {
+    position: relative;
+    color: white;
+    margin-bottom: 1px;
+    font-weight: normal;
+    font-family: "Bodoni italic", serif;
+    font-size: 26px;
+
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      height: 1px;
+      width: 7vw;
+      background: #eb1575;
+    }
+  }
+}
+.feedbackFormWrapperBorder {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  border-radius: 30px 0 30px 0;
+  box-shadow: 0 1px 2px rgb(97 0 40 / 40%);
+  padding: 2vw;
+  width: 600px;
+  /*background: rgba(158, 0, 71, 0.5);*/
+  background: rgba(6, 135, 138, 0.5);
+}
+
+.formInner {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+
+  .inputModule {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    input,
+    textarea {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      font-style: normal;
+      padding: 0 1vw;
+      margin: 1vw 0 1vw;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      color: white;
+      font-size: 1.7vw;
+      width: 70%;
+      background: rgba(4, 39, 49, 0.2);
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      &:focus-visible,
+      &:focus,
+      &:hover {
+        outline: 0;
+        outline-offset: 0;
+      }
+      &.error {
+        border: 1px #eb1575 solid;
+      }
+    }
+    input {
+      height: 30px;
+    }
+    textarea {
+      height: 10vw;
+      resize: none;
+    }
+    span {
+      position: absolute;
+      top: -7px;
+      right: 85px;
+      color: #eb1575;
+      font-size: 12px;
+    }
+  }
+  .wrapperButtonBox {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 44vw;
+    button {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      font-size: 1.5vw;
+      width: auto;
+      color: white;
+      padding: 0.2vw 1vw;
+      height: 32px;
+      background: none;
+      border: 1px solid #eb1575;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        background: #eb1575;
+        color: white;
+      }
+    }
+  }
+}
+
+/*Mobile version */
+
+.formInnerMobile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.formInnerMobile input::placeholder,
+.formInnerMobile textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+.formInnerMobile input,
+.formInnerMobile textarea {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  width: 98%;
+  padding: 0 2px;
+  margin: 10px 0;
+  border-width: 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  background: rgba(45, 206, 235, 0.2);
+}
+.formInnerMobile input {
+  height: 25px;
+}
+.formInnerMobile textarea {
+  height: 100px;
+  resize: none;
+}
+.formInnerMobile input:focus-visible,
+.formInnerMobile textarea:focus-visible,
+.formInnerMobile input:focus,
+.formInnerMobile textarea:focus,
+.formInnerMobile input:hover,
+.formInnerMobile textarea:hover {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.deliveryImgWrapperMobile {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  top: 1px;
+  right: 4px;
+  z-index: 1;
+}
+.buttonsWrapperMobile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.formInnerMobile button {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: auto;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  background: #ebd72d;
+  cursor: pointer;
+}
+.formInnerMobile button:disabled {
+  cursor: default;
+  background: rgba(235, 215, 45, 0.5);
+  color: rgba(0, 0, 0, 0.4);
+}

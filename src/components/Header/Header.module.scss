@@ -19,10 +19,11 @@
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+
   z-index: 2;
   &.small {
     box-shadow: 0 1px 3px 0 rgba(50, 50, 50, 0.8);
+    background: white;
   }
 }
 
@@ -44,7 +45,11 @@
 .basketWrap {
   position: relative;
 }
-.containerLogo {
+.smallLogoWrap {
+  img {
+    width: 15vw;
+    height: auto;
+  }
 }
 .logoRow {
   display: flex;

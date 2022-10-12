@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import { ReactComponent as Like } from "./assets/heart.svg";
-import { ReactComponent as Basket } from "../../assets/img/basket.svg";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  violetToBasket,
-  violetToTotalCost,
-  violetWithOutBasket,
-} from "../../store/basketSlice";
+import { useSelector } from "react-redux";
 import s from "./VioletCard.module.scss";
 import { ReactComponent as Search } from "../../assets/img/search.svg";
-
 import { isTouchSelector } from "../../store/appInitSlice";
-
 import Viewer from "react-viewer";
+import ButtonInOutBasket from "../ButtonInOutBasket";
 
 const VioletCard = ({
   name,
@@ -27,18 +20,10 @@ const VioletCard = ({
 }) => {
   const [visible, setVisible] = useState(false);
   const touchSelector = useSelector(isTouchSelector);
-  const dispatch = useDispatch();
   const { pricesAdultViolet, pricesBaby, pricesLeaf, pricesStarter } = props;
 
   const handleClick = () => {
     onLikeClick && onLikeClick(titleSlug);
-  };
-  const handleClickButtonToBasket = () => {
-    dispatch(violetToBasket(titleSlug));
-  };
-  const handleDeleteVioletInBasket = () => {
-    dispatch(violetWithOutBasket(titleSlug));
-    dispatch(violetToTotalCost({ [titleSlug]: 0 }));
   };
 
   return (
@@ -93,22 +78,8 @@ const VioletCard = ({
             >
               <Like />
             </div>
-            <div className={s.buttonBaskedWrap}>
-              {inBasket ? (
-                <button
-                  className={s.active}
-                  onClick={handleDeleteVioletInBasket}
-                >
-                  <Basket />
-                  <p>Убрать из корзины</p>
-                </button>
-              ) : (
-                <button onClick={handleClickButtonToBasket}>
-                  <Basket />
-                  <p>В корзину</p>
-                </button>
-              )}
-            </div>
+            <ButtonInOutBasket titleSlug={titleSlug} inBasket={inBasket} />
+
             <div className={s.wrapButtonVisible}>
               <button
                 onClick={() => {

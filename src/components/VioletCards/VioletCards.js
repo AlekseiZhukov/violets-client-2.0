@@ -8,7 +8,7 @@ import Preloader from "../Preloader";
 import VioletCard from "../VioletCard";
 import Paginator from "../Paginator/Paginator";
 import SearchForm from "../SearchForm";
-import ModalWindowDetails from "../ModalWindowDetails_notUsed";
+
 
 const VioletCards = () => {
 
@@ -55,7 +55,7 @@ const VioletCards = () => {
     <div className={s.root}>
 
       <div className={s.container}>
-        <h1 className={s.title}>Доступно к продаже:</h1>
+
         <div className={s.searchWrap}>
           <SearchForm onSearchValueChanged={handleSearch} />
         </div>
@@ -89,8 +89,9 @@ const VioletCards = () => {
                 </div>
               )
             )}
-          {error && <p>нет совпадений</p>}
+
         </div>
+        {error && <p className={s.errorSearch}>такой фиалки у меня нет</p>}
         <div className={s.paginatorWrap}>
           {data !== null && !error && (
             <Paginator

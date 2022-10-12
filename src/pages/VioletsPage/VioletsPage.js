@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFetchAllVioletsQuery } from "../../api/violetsAPI";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
@@ -11,7 +11,6 @@ const VioletsPage = () => {
     requestAll: true,
   });
 
-  const [index, setIndex] = useState(-1);
   const images =
     data &&
     data.map((item) => {
@@ -21,6 +20,7 @@ const VioletsPage = () => {
         alt: item.nameViolet,
         nano: "base64",
         caption: item.nameViolet,
+
         customOverlay: (
           <div className={s.customOverlay}>
             <h3>{item.nameViolet}</h3>
@@ -30,6 +30,9 @@ const VioletsPage = () => {
         height: 500,
       };
     });
+
+  const [index, setIndex] = useState(-1);
+
   const currentImage = data && images[index];
   const nextIndex = data && (index + 1) % images.length;
   const nextImage = (data && images[nextIndex]) || currentImage;
@@ -47,15 +50,14 @@ const VioletsPage = () => {
 
   return (
     <div className={s.root}>
-      <div>
-        <h1>Violets Page</h1>
-      </div>
+      <h1>Моя коллекция:</h1>
+
       {images && (
         <Gallery
           images={images}
-          margin={5}
+          margin={15}
           onClick={handleClick}
-          rowHeight={300}
+          rowHeight={500}
           enableImageSelection={false}
         />
       )}

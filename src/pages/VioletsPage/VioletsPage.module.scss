@@ -1,16 +1,26 @@
 .root {
   max-width: 1200px;
   margin: 0 auto;
+  h1 {
+    text-align: center;
+    color: #9e0047;
+  }
 }
 .customOverlay {
   padding: 5px;
 
-  background: rgba(158, 0, 71, 0.4);
+  background: rgba(158, 0, 71, 0.7);
 
   h3 {
     font-size: 18px;
     height: 100%;
     color: #ebd72d;
     text-align: center;
+  }
+}
+@media only screen and (max-width: 549px) {
+  .root {
+    max-width: 1200px;
+    margin: 60px auto 0;
   }
 }

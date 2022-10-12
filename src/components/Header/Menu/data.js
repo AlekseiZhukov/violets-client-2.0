@@ -8,14 +8,4 @@ export const MENU = [
     name: "Мои фиалки",
     href: "/violets",
   },
-
-  {
-    name: "Отзывы",
-    href: "/reviews",
-  },
-
-  {
-    name: "Контакты",
-    href: "/contacts",
-  },
 ];

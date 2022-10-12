@@ -37,7 +37,6 @@ const Order = () => {
 
   return (
     <div className={s.root}>
-      <h1>Корзина</h1>
       <div className={s.wrap}>
         <div className={s.tableOrder}>
           <h2 className={s.tableOrderHeader}>Фиалки в корзине:</h2>

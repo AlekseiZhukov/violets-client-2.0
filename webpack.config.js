@@ -76,7 +76,9 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: [
+        type: "assets/fonts",
+        dependency: { not: ["url"] },
+        /*use: [
           {
             loader: "file-loader",
             options: {
@@ -84,8 +86,8 @@ module.exports = {
               name: "[name][hash:base64:5].[ext]",
             },
           },
-        ],
-        type: "asset/resource",
+        ],*/
+        /*type: "asset/resource",*/
       },
     ],
   },
@@ -116,7 +118,4 @@ module.exports = {
     },
   },
   devtool: "source-map",
-  resolve: {
-    fallback: {},
-  },
 };

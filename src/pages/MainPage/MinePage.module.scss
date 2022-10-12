@@ -1,2 +1,54 @@
 .root {
+  .wrapPoetry {
+    font-family: "Bodoni italic", serif;
+    font-size: 24px;
+    line-height: 1.7;
+    width: 370px;
+    margin: 10px auto 0;
+    text-align: center;
+    &::first-letter {
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #9e0047;
+      color: #fff;
+      margin-right: 1.5px;
+      padding: 0 0.2em;
+      border-radius: 0.1em;
+    }
+  }
+}
+.versesBlock {
+  margin: 80px 0 80px;
+}
+.wrapSvg {
+  width: 400px;
+  margin: 0 auto;
+  svg {
+    width: 400px;
+    -webkit-filter: drop-shadow(3px 3px 2px rgba(97, 0, 40, 0.7));
+    filter: drop-shadow(3px 3px 2px rgba(97, 0, 40, 0.7));
+    path {
+      fill: #9e0047;
+    }
+  }
+}
+.sectionViolets {
+  h1 {
+    color: #9e0047;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 549px) {
+  .versesBlock {
+    margin: 40px 0 40px;
+    .wrapSvg {
+      svg {
+        width: 300px;
+      }
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
 }
