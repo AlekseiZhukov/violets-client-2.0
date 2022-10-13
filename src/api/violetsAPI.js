@@ -18,8 +18,9 @@ export const violetsAPI = createApi({
   }),
   endpoints: (build) => ({
     fetchVioletsForAdmin: build.query({
-      query: () => ({
+      query: (data) => ({
         url: "/violetcards",
+        params: data,
       }),
       providesTags: (result) => ["Violets"],
     }),

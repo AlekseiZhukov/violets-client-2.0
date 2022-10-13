@@ -1,15 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useFetchAllVioletsQuery } from "../../api/violetsAPI";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import s from "./VioletsPage.module.scss";
 import Preloader from "../../components/Preloader";
+import ButtonToUp from "../../components/ButtonToUp";
 
 const VioletsPage = () => {
   const { data, error, isLoading } = useFetchAllVioletsQuery({
     requestAll: true,
   });
+  const [showUp, setShowUp] = useState(false);
+
+  const showButtonUp = useCallback(() => {
+    const scrolled = document.documentElement.scrollTop;
+
+    if (scrolled > window.innerWidth) {
+      setShowUp(true);
+    }
+    if (scrolled <= window.innerWidth) {
+      setShowUp(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", showButtonUp);
+    return () => {
+      window.removeEventListener("scroll", showButtonUp);
+    };
+  }, []);
 
   const images =
     data &&
@@ -61,6 +81,7 @@ const VioletsPage = () => {
           enableImageSelection={false}
         />
       )}
+      {showUp && <ButtonToUp />}
       {!!currentImage && (
         <Lightbox
           mainSrc={currentImage.original}

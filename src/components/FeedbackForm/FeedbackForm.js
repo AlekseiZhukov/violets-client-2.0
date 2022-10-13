@@ -3,7 +3,6 @@ import s from "./FeedbackForm.module.scss";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
 import { telegramApi } from "../../api/sendTelegramAPI";
-import { clearBasket } from "../../store/basketSlice";
 
 const FeedbackForm = () => {
   const [messageToUser, setMessageToUser] = useState("");
@@ -11,13 +10,10 @@ const FeedbackForm = () => {
     register,
     handleSubmit,
     reset,
-    formState,
-    formState: { errors },
-  } = useForm({});
+    formState: { errors, isDirty, isValid },
+  } = useForm({ mode: "onChange" });
 
   const onSubmit = (data) => {
-    console.log("FeedbackForm onSubmit data: ", data);
-
     const message = `Имя: ${data.name}\n\n Телефон: ${data.tel}\n\n Сообщеие:${data.message}`;
 
     const dataForSend = {
@@ -40,7 +36,7 @@ const FeedbackForm = () => {
   return (
     <div className={s.feedbackFormWrapper}>
       <div className={s.feedbackFormWrapperBorder}>
-        <h2>Напишите мне:</h2>
+        <h2 id={"#feedback"}>Напишите мне:</h2>
         <form className={s.formInner} onSubmit={handleSubmit(onSubmit)}>
           <div className={s.inputModule}>
             <input
@@ -72,22 +68,27 @@ const FeedbackForm = () => {
             />
             {errors.message && <span>{errors.message.message}</span>}
           </div>
-          {messageToUser ? (
-            <span>{messageToUser}</span>
-          ) : (
-            <div className={s.wrapperButtonBox}>
-              <button type="submit">Отправить</button>
 
-              <button
-                type="button"
-                onClick={() => {
-                  reset({ name: "", tel: "", message: "" });
-                }}
-              >
-                Отменить
-              </button>
-            </div>
-          )}
+          <div className={s.wrapperButtonBox}>
+            {messageToUser ? (
+              <span>{messageToUser}</span>
+            ) : (
+              <>
+                <button type="submit" disabled={!isDirty || !isValid}>
+                  Отправить
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    reset({ name: "", tel: "", message: "" });
+                  }}
+                >
+                  Отменить
+                </button>
+              </>
+            )}
+          </div>
         </form>
       </div>
     </div>
