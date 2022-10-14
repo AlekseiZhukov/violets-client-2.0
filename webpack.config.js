@@ -47,6 +47,7 @@ module.exports = {
             },
           },
           "sass-loader",
+
         ],
       },
       {
@@ -55,8 +56,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              outputPath: "assets/images",
-              name: "[name][hash:base64:5].[ext]",
+              outputPath: "assets",
+              name: "[name].[ext]",
             },
           },
         ],
@@ -78,16 +79,6 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "assets/fonts",
         dependency: { not: ["url"] },
-        /*use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "assets/fonts",
-              name: "[name][hash:base64:5].[ext]",
-            },
-          },
-        ],*/
-        /*type: "asset/resource",*/
       },
     ],
   },
@@ -113,7 +104,7 @@ module.exports = {
 
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:5000",
+        target: "http://фиалки-жуковой-елены.рф",
       },
     },
   },

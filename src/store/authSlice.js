@@ -14,7 +14,7 @@ const initialState = {
 export const fetchAuth = createAsyncThunk("auth", async (data, thunkApi) => {
   console.log("fetchAuth createAsyncThunk");
   try {
-    return await fetch("http://localhost:3000/api/auth/login", {
+    return await fetch("http://фиалки-жуковой-елены.рф/api/auth/login", {
       method: "POST",
       headers: {
         Accept: "application/json",

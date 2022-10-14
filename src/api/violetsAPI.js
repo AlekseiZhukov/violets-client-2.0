@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const urlLocalServer = "http://localhost:3000/api";
-//const urlRemoteServer = "'http://фиалки-жуковой-елены.рф/api'";
+//const urlLocalServer = "http://localhost:3000/api";
+const urlRemoteServer = "http://фиалки-жуковой-елены.рф/api";
 
 export const violetsAPI = createApi({
   reducerPath: "violetsAPI",
   tagTypes: ["Violets"],
   baseQuery: fetchBaseQuery({
-    baseUrl: urlLocalServer,
+    baseUrl: urlRemoteServer,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.authData.token || "";
       if (token) {

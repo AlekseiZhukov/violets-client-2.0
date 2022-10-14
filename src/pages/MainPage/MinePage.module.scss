@@ -67,4 +67,14 @@
       margin: 0 auto;
     }
   }
+  .buttonToBuy {
+    position: absolute;
+    top: 95px;
+    z-index: 2;
+    right: 60px;
+    left: 60px;
+    font-size: 18px;
+    background: #eb1575;
+    color: white;
+  }
 }

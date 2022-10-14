@@ -5,7 +5,7 @@ import s from "./Layout.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { isTouchSelector, touch } from "../../store/appInitSlice";
 import Footer from "../Footer";
-import background from "./../../assets/img/background1.png";
+import background from "../../assets/img/background.png";
 
 const Layout = () => {
   const match = useMatch("/admin");

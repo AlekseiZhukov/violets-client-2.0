@@ -56,7 +56,7 @@ const MinePage = () => {
 
   return (
     <div className={s.root}>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", position: "relative" }}>
         <button
           className={s.buttonToBuy}
           onClick={() => {

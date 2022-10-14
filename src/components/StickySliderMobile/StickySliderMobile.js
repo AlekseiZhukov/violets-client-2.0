@@ -34,7 +34,7 @@ const StickySliderMobile = () => {
             <SwiperSlide key={item._id}>
               <div
                 style={{
-                  backgroundImage: `url('${item.photo})`,
+                  backgroundImage: `url(${item.photo})`,
                   backgroundPosition: "50% 50%",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",

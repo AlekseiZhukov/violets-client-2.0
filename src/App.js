@@ -1,15 +1,11 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import MainPage from "./pages/MainPage";
 import VioletsPage from "./pages/VioletsPage";
-import ReviewsPage from "./pages/ReviewsPage_not_Used";
-import ContactsPage from "./pages/ContactsPage_not_Used";
 import Order from "./components/Order";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
-import VioletPage from "./pages/VioletPage_notUsed";
-import LayoutViolets from "./components/LayoutViolets/LayoutViolets";
 
 const App = () => {
   const { pathname } = useLocation();
